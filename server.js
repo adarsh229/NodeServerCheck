@@ -3,6 +3,8 @@ const hbs = require('hbs');
 var app = express();
 var fs = require('fs');
 
+const port = process.env.PORT || 3000;  //for heroku
+
 
 
 app.use((req, res, next) => {   //app.use helps us make middleware for better usage 
@@ -75,6 +77,6 @@ app.get('/bad', (req, res ) => {
     });
 });
 
-app.listen(3000);
+app.listen(port);
 
-console.log('Server running at port 3000');
+console.log(`Server running at port ${port}`);
